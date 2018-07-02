@@ -1,10 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
-using ContactList.Models;
+﻿using ContactList.Models;
 using ContactList.Services;
-using ContactListApp.Data;
 using ContactListApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace ContactListApp.Controllers
 {

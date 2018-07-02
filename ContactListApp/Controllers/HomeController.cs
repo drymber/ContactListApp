@@ -1,7 +1,10 @@
-﻿using ContactList.Services;
+﻿using ContactList.Models;
+using ContactList.Services;
 using ContactListApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace ContactListApp.Controllers
 {
@@ -15,7 +18,14 @@ namespace ContactListApp.Controllers
         }
         public IActionResult Index()
         {
-            var contacts = _contactsService.GetAll().Result;
+            var contacts = new List<Contact>();
+            try
+            {
+                contacts = _contactsService.GetAll().Result.ToList();
+            }
+            catch (System.Exception)
+            {
+            }
             return View(contacts);
         }
 
