@@ -3,7 +3,6 @@ using ContactList.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -13,13 +12,6 @@ namespace ContactListApp.Data
 {
     public class ContactsService : IContactsService
     {
-        public async Task Create(Contact model)
-        {
-            var client = CreateClient();
-
-            var response = await client.PostAsync("api/contacts", new StringContent(JsonConvert.SerializeObject(model)));
-        }
-
         public async Task<IEnumerable<Contact>> GetAll()
         {
             var client = CreateClient();
@@ -46,10 +38,20 @@ namespace ContactListApp.Data
             return new Contact();
         }
 
+        public async Task Create(Contact model)
+        {
+            var client = CreateClient();
+            var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+            //var newModel = J
+            var response = await client.PostAsJsonAsync("api/contacts", model);
+            var created = await response.Content.ReadAsAsync<Contact>();
+        }
+
         public async Task Update(Contact model)
         {
             var client = CreateClient();
-            var response = await client.PutAsync("api/contacts", new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json"));
+            var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
+            var response = await client.PutAsync("api/contacts", content);
         }
 
         private HttpClient CreateClient()

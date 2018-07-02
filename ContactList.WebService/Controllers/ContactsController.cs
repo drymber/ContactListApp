@@ -1,11 +1,7 @@
-﻿using ContactList.Data;
-using ContactList.Models;
+﻿using ContactList.Models;
 using ContactList.WebServices.Data;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ContactList.WebService.Controllers
 {
@@ -32,13 +28,13 @@ namespace ContactList.WebService.Controllers
         }
 
         [HttpPost]
-        public void Create(Contact contact)
+        public void Create([FromBody] Contact contact)
         {
             _contactsRepository.Create(contact);
         }
 
         [HttpPut]
-        public void Update(Contact contact)
+        public void Update([FromBody] Contact contact)
         {
             _contactsRepository.Update(contact);
         }
