@@ -49,7 +49,6 @@ namespace ContactListApp.Data
         public async Task Update(Contact model)
         {
             var client = CreateClient();
-
             var response = await client.PutAsync("api/contacts", new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json"));
         }
 
