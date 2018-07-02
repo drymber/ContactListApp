@@ -38,5 +38,11 @@ namespace ContactList.WebService.Controllers
         {
             _contactsRepository.Update(contact);
         }
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            _contactsRepository.Delete(id);
+        }
     }
 }

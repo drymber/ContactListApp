@@ -41,8 +41,6 @@ namespace ContactListApp.Data
         public async Task Create(Contact model)
         {
             var client = CreateClient();
-            var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
-            //var newModel = J
             var response = await client.PostAsJsonAsync("api/contacts", model);
             var created = await response.Content.ReadAsAsync<Contact>();
         }
@@ -52,6 +50,12 @@ namespace ContactListApp.Data
             var client = CreateClient();
             var content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, "application/json");
             var response = await client.PutAsync("api/contacts", content);
+        }
+
+        public async Task Delete(int id)
+        {
+            var client = CreateClient();
+            var response = await client.DeleteAsync($"api/contacts/{id}");
         }
 
         private HttpClient CreateClient()

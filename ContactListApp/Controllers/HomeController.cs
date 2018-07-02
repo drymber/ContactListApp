@@ -1,19 +1,16 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using ContactListApp.Data;
+﻿using ContactList.Services;
 using ContactListApp.ViewModels;
-using ContactList.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ContactListApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ContactsRepository _contactsRepository;
         private readonly ContactList.Services.IContactsService _contactsService;
 
-        public HomeController(ContactsRepository contactsRepository, ContactList.Services.IContactsService contactService)
+        public HomeController(IContactsService contactService)
         {
-            _contactsRepository = contactsRepository;
             _contactsService = contactService;
         }
         public IActionResult Index()

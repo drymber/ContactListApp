@@ -10,5 +10,6 @@ namespace ContactList.Services
         Task<Contact> GetById(int id);
         Task Update(Contact model);
         Task Create(Contact model);
+        Task Delete(int id);
     }
 }
