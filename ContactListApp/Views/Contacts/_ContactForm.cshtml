@@ -1,0 +1,52 @@
+﻿@model ContactListApp.ViewModels.ContactViewModel
+
+<div class="modal-content" id="contactFormModal">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">&times;</a>
+        <h4 id="modalTitle">@Model.Heading</h4>
+    </div>
+    <div class="modal-body" id="form-container">
+        @using (Html.BeginForm(@Model.Action, "Contacts", FormMethod.Post, new { id = "form-contactedit" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(c => c.Id)
+            @Html.HiddenFor(c => c.Heading)
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LastName)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PhoneNumber)
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.PhoneNumber)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address1)
+                @Html.TextBoxFor(m => m.Address1, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Address1)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address2)
+                @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Address2)
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Comments)
+                @Html.TextBoxFor(m => m.Comments, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Comments)
+
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        }
+    </div>
+</div>
