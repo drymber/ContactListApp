@@ -1,8 +1,7 @@
-﻿using ContactList.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ContactList.Services
+namespace ContactList.Entities
 {
     public interface IContactsService
     {

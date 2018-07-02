@@ -1,5 +1,4 @@
-﻿using ContactList.Models;
-using ContactList.Services;
+﻿using ContactList.Entities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactListApp.Data
+namespace ContactListApp.Service
 {
     public class ContactsService : IContactsService
     {

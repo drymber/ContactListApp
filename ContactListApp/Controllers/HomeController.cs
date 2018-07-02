@@ -1,5 +1,4 @@
-﻿using ContactList.Models;
-using ContactList.Services;
+﻿using ContactList.Entities;
 using ContactListApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,7 +9,7 @@ namespace ContactListApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ContactList.Services.IContactsService _contactsService;
+        private readonly IContactsService _contactsService;
 
         public HomeController(IContactsService contactService)
         {

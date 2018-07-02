@@ -1,5 +1,5 @@
-﻿using ContactList.Models;
-using ContactList.WebServices.Data;
+﻿using ContactList.Entities;
+using ContactList.WebService.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 

@@ -1,5 +1,5 @@
-﻿using ContactList.Services;
-using ContactListApp.Data;
+﻿using ContactList.Entities;
+using ContactListApp.Service;
 using ContactListApp.ViewModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

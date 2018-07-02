@@ -1,7 +1,7 @@
-﻿using ContactList.Models;
+﻿using ContactList.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactList.Data
+namespace ContactList.WebService.Data
 {
     public class ContactListDbContext : DbContext
     {

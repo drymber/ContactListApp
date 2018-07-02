@@ -1,5 +1,4 @@
-﻿using ContactList.Data;
-using ContactList.WebServices.Data;
+﻿using ContactList.WebService.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

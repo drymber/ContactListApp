@@ -1,5 +1,4 @@
-﻿using ContactList.Models;
-using ContactList.Services;
+﻿using ContactList.Entities;
 using ContactListApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;

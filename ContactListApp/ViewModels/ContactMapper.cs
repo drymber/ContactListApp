@@ -1,4 +1,4 @@
-﻿using ContactList.Models;
+﻿using ContactList.Entities;
 
 namespace ContactListApp.ViewModels
 {

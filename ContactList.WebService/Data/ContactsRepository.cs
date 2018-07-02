@@ -1,9 +1,8 @@
-﻿using ContactList.Data;
-using ContactList.Models;
+﻿using ContactList.Entities;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ContactList.WebServices.Data
+namespace ContactList.WebService.Data
 {
     public class ContactsRepository
     {
